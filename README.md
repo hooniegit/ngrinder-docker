@@ -14,10 +14,10 @@ https://github.com/naver/ngrinder/releases
 
 ### GOAL
 ---
-- [] upload simple web page(uploaded at https://github.com/hooniegit/hooniegit.github.io, using docker with apache httpd)
-- [] make simple round robin with docker(3 apache httpd + 1 nginx)
-- [] download and install ngrinder
-- [] run a traffic test on the round robin web page
-- [] edit configures for better performance
+-[] upload simple web page(uploaded at https://github.com/hooniegit/hooniegit.github.io, using docker with apache httpd)
+-[] make simple round robin with docker(3 apache httpd + 1 nginx)
+-[] download and install ngrinder
+-[] run a traffic test on the round robin web page
+-[] edit configures for better performance
 
 #
