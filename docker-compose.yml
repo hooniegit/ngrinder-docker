@@ -1,0 +1,33 @@
+name: blog-lb
+services:
+  blog-1:
+    build: ./httpd
+    container_name: a3blog-1
+    ports:
+      - 9051:80
+  
+  blog-2:
+    build: ./httpd
+    container_name: a3blog-2
+    ports:
+      - 9052:80
+
+  blog-3:
+    build: ./httpd
+    container_name: a3blog-3
+    ports:
+      - 9053:80
+  
+  load-balancer:
+    build: ./nginX
+    container_name: lb-1
+    ports:
+      - 9151:80
+    depends_on:
+      - blog-1
+      - blog-2
+      - blog-3
+    links:
+      - blog-1
+      - blog-2
+      - blog-3
