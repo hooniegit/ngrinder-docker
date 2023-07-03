@@ -14,4 +14,4 @@ RUN crontab /etc/cron.d/blog-pull-cronjob
 RUN sed -i 's#DocumentRoot "/usr/local/apache2/htdocs"#DocumentRoot "/usr/local/apache2/app/blog/hooniegit.github.io"#g' /usr/local/apache2/conf/httpd.conf
 RUN sed -i 's#<Directory "/usr/local/apache2/htdocs">#<Directory "/usr/local/apache2/app/blog/hooniegit.github.io">#g' /usr/local/apache2/conf/httpd.conf
 
-CMD ["cron", "-f"]
+CMD service cron start;httpd-foreground
