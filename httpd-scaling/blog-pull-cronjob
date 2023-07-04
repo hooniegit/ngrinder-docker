@@ -1,0 +1,1 @@
+*/5 * * * * root /usr/local/apache2/app/blog/pull.sh
