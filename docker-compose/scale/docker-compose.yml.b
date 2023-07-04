@@ -9,7 +9,7 @@ services:
       - 80
 
   load_balancer:
-    build: ../../nginx
+    build: ../../nginX
     ports:
       - 9999:80
     depends_on:
