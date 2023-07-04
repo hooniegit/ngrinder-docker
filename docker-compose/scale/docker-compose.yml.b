@@ -1,13 +1,13 @@
-name: neivekim76
+name: hooniegit
 services:
   blog:
-    build: ../../httpd-scale-up
+    build: ../../httpd
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 3
     ports:
       - 80
-  
+
   load_balancer:
     build: ../../nginx
     ports:
