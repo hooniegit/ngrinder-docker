@@ -1,7 +1,7 @@
 name: neivekim76
 services:
   blog:
-    build: ../../httpd-scaling
+    build: ../../httpd-scale-up
     deploy:
       mode: replicated
       replicas: 1
