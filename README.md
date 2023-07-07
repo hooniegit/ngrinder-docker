@@ -1,11 +1,9 @@
 # round-robin-practices
----
 - Docker Compose를 통한 라운드로빈 웹 서버 컨테이너 구축
 - 웹 페이지의 트래픽 부하 테스트 목적으로 사용
 
 
 ## Resources
----
 #### 1. 컨테이너 환경
 - httpd git repository : https://github.com/hooniegit/hooniegit.github.io
 - httpd 이미지(v2.4.57)
@@ -24,7 +22,6 @@
 
 
 ## GOAL
----
 - [x] HTTPD 기반의 웹 페이지 컨테이너 생성 테스트
 - [x] nginx 기반의 라운드로빈 컨테이너 생성 테스트
 - [x] ngrinder 툴을 사용한 라운드로빈 성능 테스트
