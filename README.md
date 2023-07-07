@@ -1,23 +1,34 @@
 # round-robin-practices
-### About
----
-This repository is for our team's study to understand the basic concept of web-page server.
-What we did is implementing a simple web page structure using apache httpd, and try editing configures.
-We did some traffic tests on out web-page to compare the influence of each settings.
 
-### Resources
 ---
-1. httpd git repository
-https://github.com/hooniegit/hooniegit.github.io
-2. ngrinder/v3.5.8
-https://github.com/naver/ngrinder/releases
+- Docker Compose를 통한 라운드로빈 웹 서버 컨테이너 구축
+- 웹 페이지의 트래픽 부하 테스트 목적으로 사용
 
-### GOAL
+
+## Resources
+
 ---
-- [x] upload simple web page(uploaded at https://github.com/hooniegit/hooniegit.github.io, using docker with apache httpd)
-- [x] make simple round robin with docker(3 apache httpd + 1 nginx)
-- [x] download and install ngrinder
-- [x] run a traffic test on the round robin web page
-- [x] edit configures for better performance
+#### 1. 컨테이너 환경
+- httpd git repository : https://github.com/hooniegit/hooniegit.github.io
+- httpd 이미지 : v2.4.57
+  ```
+  $ docker pull httpd:2.4.57
+  ```
+- nginx 이미지 : v1.25.1
+  ```
+  $ docker pull nginx:1.25.1
+  ```
 
-#
+#### 2. 테스트 환경
+- ngrinder/v3.5.8 : https://github.com/naver/ngrinder/releases
+
+
+## GOAL
+
+---
+- [x] HTTPD 기반의 웹 페이지 컨테이너 생성 테스트
+- [x] nginx 기반의 라운드로빈 컨테이너 생성 테스트
+- [x] ngrinder 툴을 사용한 라운드로빈 성능 테스트
+- [x] nginx configure 수정 및 라운드로빈 성능 테스트
+- [x] scale up, scale out 설정 및 라운드로빈 성능 테스트
+
