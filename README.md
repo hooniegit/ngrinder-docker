@@ -27,4 +27,5 @@
 - [x] ngrinder 툴을 사용한 라운드로빈 성능 테스트
 - [x] nginx configure 수정 및 라운드로빈 성능 테스트
 - [x] scale up, scale out 설정 및 라운드로빈 성능 테스트
+- [ ] 성능 테스트 도중 nginx -s reload 를 진행하면서 변화 확인 -> nginx의 유용성에 대한 고찰
 
