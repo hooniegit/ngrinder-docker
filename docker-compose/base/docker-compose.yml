@@ -1,33 +1,21 @@
-name: blog-lb
+name: hooniegit
+version: "3.9"
 services:
-  a3blog-1:
+  blog:
     build: ../../httpd
-    container_name: a3blog-1
+    deploy:
+      mode: replicated
+      replicas: 2
+      resources:
+        limits:
+          cpus: "0.5"    # PERCENTAGE OF CPU
+          memory: 512M   # SHARED MEMORIES
     ports:
-      - 9051:80
+      - 80
   
-  a3blog-2:
-    build: ../../httpd
-    container_name: a3blog-2
-    ports:
-      - 9052:80
-
-  a3blog-3:
-    build: ../../httpd
-    container_name: a3blog-3
-    ports:
-      - 9053:80
-  
-  load-balancer:
+  load_balancer:
     build: ../../nginX
-    container_name: lb-1
     ports:
-      - 9251:80
+      - 9999:80
     depends_on:
-      - a3blog-1
-      - a3blog-2
-      - a3blog-3
-    links:
-      - a3blog-1
-      - a3blog-2
-      - a3blog-3
+      - blog
