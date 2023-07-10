@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spark-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sparktest
+  template:
+    metadata:
+      labels:
+        app: sparktest
+    spec:
+      containers:
+        - name: spark-test
+          image: apache/spark
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spark-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 4474
+      targetPort: 80
+  selector:
+    app: sparktest
